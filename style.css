@@ -1,68 +1,64 @@
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    background-color: #111;
-    color: gold;
-    position: sticky;
-    top: 0;
-}
-.nav-links li {
-    display: inline-block;
-    margin-left: 30px;
-}
-.nav-links a {
-    text-decoration: none;
-    color: gold;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #fff;
+body {
+  margin:0;
+  font-family: Arial;
+  background:#111;
+  color:gold;
 }
 
-/* Hero */
+nav {
+  padding:20px;
+  background:black;
+}
+
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(45deg, #111, #222);
-    color: gold;
+  text-align:center;
+  padding:100px;
 }
-.hero h1 { font-size: 48px; margin-bottom: 20px; }
-.hero p { font-size: 20px; margin-bottom: 30px; }
-.btn-primary {
-    padding: 15px 30px;
-    background-color: gold;
-    color: #111;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
+
+button {
+  background:gold;
+  padding:15px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  margin:5px;
 }
-.btn-primary:hover { background-color: #fff; }
 
-/* Services */
-#services { padding: 80px 20px; text-align: center; background-color: #f5f5f5; }
-.services-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px; }
-.service-card {
-    background-color: #111;
-    color: gold;
-    padding: 30px;
-    border-radius: 12px;
-    width: 250px;
+.images img {
+  width:45%;
+  margin:10px;
+  border-radius:10px;
 }
-.service-card h3 { margin-bottom: 15px; }
-.service-card p { font-size: 14px; }
 
-/* Contact */
-#contact { padding: 80px 20px; text-align: center; }
-form { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
-input, textarea { padding: 15px; border-radius: 8px; border: 1px solid #ccc; }
-button { padding: 15px; background-color: gold; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-button:hover { background-color: #fff; }
-.whatsapp-btn { display: inline-block; margin-top: 20px; background-color: #25D366; color: #fff; padding: 12px 25px; border-radius: 50px; text-decoration: none; }
+.services {
+  display:flex;
+  justify-content:space-around;
+  padding:50px;
+}
 
-/* Footer */
-footer { text-align: center; padding: 30px; background-color: #111; color: gold; margin-top: 50px; }
+.services div {
+  background:black;
+  padding:20px;
+  border-radius:10px;
+}
+
+.contact {
+  text-align:center;
+  padding:50px;
+}
+
+input, textarea {
+  display:block;
+  margin:10px auto;
+  padding:10px;
+  width:50%;
+  border-radius:5px;
+  border:none;
+}
+
+a {
+  color:gold;
+  display:block;
+  margin-top:10px;
+  font-weight:bold;
+}
