@@ -1,28 +1,35 @@
-const form = document.getElementById('contactForm');
+// STRIPE PAYMENT
+const stripe = Stripe('pqzptqtp6pu7r');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-    };
+async function payStripe() {
+  const res = await fetch('/stripe-pay', { method: 'POST' });
+  const data = await res.json();
+  stripe.redirectToCheckout({ sessionId: data.id });
+}
 
-    try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
+// PAYFAST PAYMENT
+async function payPayfast() {
+  const res = await fetch('/payfast', { 
+    method:'POST', 
+    headers:{ 'Content-Type':'application/json' },
+    body: JSON.stringify({ amount: 500.00 })
+  });
+  const data = await res.json();
+  window.location.href = data.url; // redirect to Payfast
+}
 
-        if (response.ok) {
-            alert('Message sent successfully!');
-            form.reset();
-        } else {
-            alert('Error sending message. Try again later.');
-        }
-    } catch (err) {
-        console.error(err);
-        alert('Server error. Try again later.');
-    }
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const inputs = e.target.elements;
+  await fetch('/contact', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      name: inputs[0].value,
+      email: inputs[1].value,
+      message: inputs[2].value
+    })
+  });
+  alert("Message sent!");
 });
