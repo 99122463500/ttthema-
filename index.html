@@ -1,283 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TT Thema Attorneys</title>
-
-<style>
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f4f6f8;
-color:#222;
-}
-
-/* NAVBAR */
-nav{
-background:#0a1f44;
-color:white;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-nav img{
-height:45px;
-}
-
-nav a{
-color:white;
-margin-left:25px;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* HERO */
-.hero{
-height:90vh;
-background:linear-gradient(rgba(10,31,68,0.8),rgba(10,31,68,0.8)),
-url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f");
-background-size:cover;
-background-position:center;
-color:white;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-animation:fadeIn 1s ease-in;
-}
-
-.hero p{
-font-size:20px;
-margin-bottom:20px;
-animation:fadeIn 2s ease-in;
-}
-
-.hero button{
-padding:14px 30px;
-background:#d4af37;
-border:none;
-cursor:pointer;
-font-size:16px;
-animation:fadeIn 3s ease-in;
-}
-
-/* SECTIONS */
-section{
-padding:80px 20px;
-text-align:center;
-}
-
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.service{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.service:hover{
-transform:translateY(-10px);
-}
-
-/* TEAM */
-.team{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.member{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.member:hover{
-transform:scale(1.05);
-}
-
-.member img{
-width:100%;
-border-radius:10px;
-}
-
-/* FORM */
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-button{
-padding:12px;
-background:#d4af37;
-border:none;
-cursor:pointer;
-}
-
-/* CONTACT */
-.contact{
-background:#0a1f44;
-color:white;
-}
-
-/* MAP */
-iframe{
-width:100%;
-height:300px;
-border:none;
-margin-top:20px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
-font-size:20px;
-text-decoration:none;
-}
-
-/* FOOTER */
-footer{
-background:#000;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-/* ANIMATION */
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-</style>
+  <title>TT Thema Attorneys</title>
+  <style>
+    body { margin:0; font-family: Georgia, serif; background: #0a1a2f; color: white; }
+    header { background: black; padding: 20px; display:flex; justify-content:space-between; }
+    nav a { color: gold; margin:0 15px; text-decoration:none; }
+    .hero { text-align:center; padding:100px 20px; }
+    .btn { background: gold; color: black; padding:15px 25px; border:none; cursor:pointer; }
+    .form { padding:40px; text-align:center; }
+    input, textarea { width:300px; margin:10px; padding:10px; }
+    footer { text-align:center; padding:20px; background:black; margin-top:20px; }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<img src="logo.jpeg">
-<div>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#team">Attorneys</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
+<header>
+  <h2>TT Thema Attorneys</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Excellence in Legal Representation</h1>
-<p>Your trusted legal partner in every matter</p>
-<button onclick="document.getElementById('contact').scrollIntoView()">Book Consultation</button>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-<h2>Practice Areas</h2>
-<div class="services">
-<div class="service"><h3>Criminal Law</h3></div>
-<div class="service"><h3>Family Law</h3></div>
-<div class="service"><h3>Civil Litigation</h3></div>
-<div class="service"><h3>Property Law</h3></div>
-<div class="service"><h3>Labour Law</h3></div>
-<div class="service"><h3>Contracts</h3></div>
-</div>
+<section class="hero">
+  <h1>Justice. Integrity. Results.</h1>
+  <p>Professional Legal Services You Can Trust</p>
 </section>
 
-<!-- TEAM -->
-<section id="team">
-<h2>Our Attorneys</h2>
-<div class="team">
-<div class="member">
-<img src="attorney1.jpeg">
-<h3>John Thema</h3>
-<p>Senior Attorney</p>
-</div>
-
-<div class="member">
-<img src="attorney2.jpeg">
-<h3>Sarah Nkosi</h3>
-<p>Family Law Specialist</p>
-</div>
-</div>
+<section class="form">
+  <h2>Contact Us</h2>
+  <input type="text" id="name" placeholder="Your Name"><br>
+  <input type="email" id="email" placeholder="Your Email"><br>
+  <textarea id="message" placeholder="Your Message"></textarea><br>
+  <button class="btn" onclick="sendMessage()">Send</button>
 </section>
 
-<!-- CONTACT FORM -->
-<section id="contact">
-<h2>Book Consultation</h2>
-
-<form action="mailto:info@ttthema.co.za" method="post" enctype="text/plain">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Describe your case"></textarea>
-<button type="submit">Send Request</button>
-</form>
-
-</section>
-
-<!-- CONTACT INFO -->
-<section class="contact">
-<h2>Contact Details</h2>
-<p>📞 079 000 0000</p>
-<p>📧 info@ttthema.co.za</p>
-<p>📍 Johannesburg, South Africa</p>
-
-<iframe src="https://maps.google.com/maps?q=Johannesburg&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-</section>
-
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/27790000000">💬</a>
-
-<!-- FOOTER -->
 <footer>
-<img src="logo.jpeg" height="60"><br>
-TT Thema Attorneys © 2026
+  &copy; 2026 TT Thema Attorneys
 </footer>
+
+<script>
+function sendMessage() {
+  fetch("https://ttthema-backend.onrender.com/contact", { // Use live Render backend URL
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    })
+  })
+  .then(res => res.text())
+  .then(data => alert(data))
+  .catch(err => alert("Failed to send message"));
+}
+</script>
 
 </body>
 </html>
