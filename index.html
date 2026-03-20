@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attorney Demo Site</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTThema Attorneys</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">LawFirm</div>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Your Trusted Legal Partner</h1>
-        <p>Professional attorney services for personal & business needs</p>
-        <a href="#contact" class="btn-primary">Get Consultation</a>
-    </section>
+<nav>
+  <h2>TTThema Attorneys</h2>
+</nav>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-container">
-            <div class="service-card">
-                <h3>Criminal Law</h3>
-                <p>Expert representation in criminal cases.</p>
-            </div>
-            <div class="service-card">
-                <h3>Family Law</h3>
-                <p>Divorce, custody, and family legal solutions.</p>
-            </div>
-            <div class="service-card">
-                <h3>Business Law</h3>
-                <p>Corporate contracts, compliance, and advice.</p>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <h1>Professional Legal Services</h1>
+  <p>Trusted representation in court & legal matters</p>
+  <button onclick="payStripe()">Pay with Stripe</button>
+  <button onclick="payPayfast()">Pay with Payfast</button>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <a href="https://wa.me/YOURNUMBER" class="whatsapp-btn" target="_blank">WhatsApp Us</a>
-    </section>
+<section class="images">
+  <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f" />
+  <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" />
+</section>
 
-    <footer>
-        <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
-    </footer>
+<section class="services">
+  <div>
+    <h3>Criminal Law</h3>
+    <p>Strong courtroom defense</p>
+  </div>
+  <div>
+    <h3>Family Law</h3>
+    <p>Divorce & custody cases</p>
+  </div>
+  <div>
+    <h3>Business Law</h3>
+    <p>Contracts & legal advice</p>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<section class="contact">
+  <form id="contactForm">
+    <input placeholder="Name" required>
+    <input placeholder="Email" required>
+    <textarea placeholder="Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <a href="https://wa.me/0665532555" target="_blank">WhatsApp</a>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
