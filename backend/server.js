@@ -1,36 +1,22 @@
-const express = require("express");
-const cors = require("cors");
-const sgMail = require("@sendgrid/mail");
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-// Set SendGrid API key (replace with your client's key)
-sgMail.setApiKey("YOUR_SENDGRID_API_KEY");
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '/')));
 
-// Test route
-app.get("/", (req, res) => res.send("Backend running on Render"));
+app.post('/api/contact', (req, res) => {
+    const { name, email, message } = req.body;
+    const data = `${new Date().toISOString()} | ${name} | ${email} | ${message}\n`;
 
-// Contact form route
-app.post("/contact", async (req, res) => {
-  const { name, email, message } = req.body;
-
-  const msg = {
-    to: "client@ttthema.co.za",  // Client's inbox
-    from: "no-reply@ttthema.co.za", // Must be verified in SendGrid
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
-  };
-
-  try {
-    await sgMail.send(msg);
-    res.send("Message sent successfully via SendGrid!");
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Failed to send email via SendGrid.");
-  }
+    fs.appendFile('messages.txt', data, (err) => {
+        if (err) return res.status(500).send('Error saving message.');
+        res.status(200).send('Message saved successfully.');
+    });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log("Server running on port " + PORT));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
