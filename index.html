@@ -1,62 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>TT Thema Attorneys</title>
-  <style>
-    body { margin:0; font-family: Georgia, serif; background: #0a1a2f; color: white; }
-    header { background: black; padding: 20px; display:flex; justify-content:space-between; }
-    nav a { color: gold; margin:0 15px; text-decoration:none; }
-    .hero { text-align:center; padding:100px 20px; }
-    .btn { background: gold; color: black; padding:15px 25px; border:none; cursor:pointer; }
-    .form { padding:40px; text-align:center; }
-    input, textarea { width:300px; margin:10px; padding:10px; }
-    footer { text-align:center; padding:20px; background:black; margin-top:20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attorney Demo Site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">LawFirm</div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<header>
-  <h2>TT Thema Attorneys</h2>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Your Trusted Legal Partner</h1>
+        <p>Professional attorney services for personal & business needs</p>
+        <a href="#contact" class="btn-primary">Get Consultation</a>
+    </section>
 
-<section class="hero">
-  <h1>Justice. Integrity. Results.</h1>
-  <p>Professional Legal Services You Can Trust</p>
-</section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Criminal Law</h3>
+                <p>Expert representation in criminal cases.</p>
+            </div>
+            <div class="service-card">
+                <h3>Family Law</h3>
+                <p>Divorce, custody, and family legal solutions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Business Law</h3>
+                <p>Corporate contracts, compliance, and advice.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="form">
-  <h2>Contact Us</h2>
-  <input type="text" id="name" placeholder="Your Name"><br>
-  <input type="email" id="email" placeholder="Your Email"><br>
-  <textarea id="message" placeholder="Your Message"></textarea><br>
-  <button class="btn" onclick="sendMessage()">Send</button>
-</section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="https://wa.me/YOURNUMBER" class="whatsapp-btn" target="_blank">WhatsApp Us</a>
+    </section>
 
-<footer>
-  &copy; 2026 TT Thema Attorneys
-</footer>
+    <footer>
+        <p>&copy; 2026 LawFirm. All Rights Reserved.</p>
+    </footer>
 
-<script>
-function sendMessage() {
-  fetch("https://ttthema-backend.onrender.com/contact", { // Use live Render backend URL
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value
-    })
-  })
-  .then(res => res.text())
-  .then(data => alert(data))
-  .catch(err => alert("Failed to send message"));
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
